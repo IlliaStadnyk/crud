@@ -1,8 +1,9 @@
+import AddPostForm from "../../features/AddPostForm/AddPostForm";
 
 const AddPost = () => {
     return (
         <section>
-            <span>AddPost</span>
+            <AddPostForm />
         </section>
     )
 }

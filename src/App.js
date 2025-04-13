@@ -16,9 +16,9 @@ function App() {
               <Header />
               <Routes>
                   <Route exact path="/" element={<Home />} />
-                  <Route exact path="/post/:id" element={<Post />} />
+                  <Route exact path="/post/:postId" element={<Post />} />
                   <Route exact path="/post/add" element={<AddPost />} />
-                  <Route exact path="/post/edit/:id" element={<EditPost />} />
+                  <Route exact path="/post/edit/:postId" element={<EditPost />} />
                   <Route exact path="*" element={<NotFound />} />
               </Routes>
               <Footer />

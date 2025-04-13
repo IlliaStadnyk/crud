@@ -1,4 +1,5 @@
 import {Button, Card} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 const PostCard = props => {
     return (
@@ -8,7 +9,7 @@ const PostCard = props => {
                 <Card.Text>Author: {props.post.author}</Card.Text>
                 <Card.Text>Published: {props.post.publishedDate}</Card.Text>
                 <Card.Text>{props.post.shortDescription}</Card.Text>
-                <Button href={`/post/${props.post.id}`}>Read more</Button>
+                <Button as={Link} to={`/post/${props.post.id}`}>Read more</Button>
             </Card.Body>
         </Card>
     )
