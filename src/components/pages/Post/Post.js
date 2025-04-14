@@ -1,7 +1,7 @@
 import {Button,  Col, Container, Modal, Row} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import {deletePost, getPost} from "../../../redux/postsRedux";
-import {Navigate, useParams} from "react-router-dom";
+import {Link, Navigate, useParams} from "react-router-dom";
 import {useState} from "react";
 
 const Post = props => {
@@ -30,7 +30,7 @@ const Post = props => {
                 </Col>
                 <Col md={6}>
                     <div className="d-flex justify-content-center gap-2 mt-3">
-                    <Button variant="outline-info">Edit</Button>
+                    <Button variant="outline-info" as={Link} to={`/post/edit/${post.id}`}>Edit</Button>
                     <Button variant="outline-danger" onClick={()=> setShowModal(true)}>Delete</Button>
                     </div>
                 </Col>
