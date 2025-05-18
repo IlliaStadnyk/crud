@@ -2,6 +2,7 @@
 
 // actions
 
+
 const createActionName = actionName => `app/posts/${actionName}`;
 const DELETE_POST = createActionName('DELETE_POST');
 const ADD_POST = createActionName('ADD_POST');
@@ -11,6 +12,10 @@ export const getAllPosts = (state) => state.posts;
 export const getPost = ({posts}, postId) => posts.find(post => post.id === postId);
 
 export const deletePost = postId => ({ type: DELETE_POST, postId });
+export const getPostsByCategory = ({posts}, categoryId) => {
+    console.log(posts);
+    return posts.filter(post => post.category === categoryId);
+}
 export const addPost = post => ({ type: ADD_POST, payload: post });
 export const editPost = post => ({ type: EDIT_POST, payload: post });
 
@@ -28,7 +33,7 @@ const postsReducer = (statePart = [], action) => {
             return [...statePart, action.payload];
         default:
             return statePart;
-    };
+    }
 };
 
 export default postsReducer;

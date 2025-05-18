@@ -7,6 +7,8 @@ import EditPost from "./components/pages/EditPost/EditPost";
 import NotFound from "./components/pages/NotFound/NotFound";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Categories from "./components/pages/Categories/Categories";
+import CategorySearch from "./components/pages/CategorySearch/CategorySearch";
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
               <Header />
               <Routes>
                   <Route exact path="/" element={<Home />} />
+                  <Route exact path="/categories" element={<Categories />} />
+                  <Route exact path="/category/:categoryId" element={<CategorySearch />} />
                   <Route exact path="/post/:postId" element={<Post />} />
                   <Route exact path="/post/add" element={<AddPost />} />
                   <Route exact path="/post/edit/:postId" element={<EditPost />} />

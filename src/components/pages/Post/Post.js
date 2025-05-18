@@ -4,7 +4,7 @@ import {deletePost, getPost} from "../../../redux/postsRedux";
 import {Link, Navigate, useParams} from "react-router-dom";
 import {useState} from "react";
 
-const Post = props => {
+const Post = () => {
 
     const dispatch = useDispatch();
     const {postId} = useParams();
@@ -24,12 +24,13 @@ const Post = props => {
                         <h1>{post.title}</h1>
                         <h4><span className="fw-bold">Author:</span> {post.author}</h4>
                         <h4><span className="fw-bold">Published:</span> {post.publishedDate}</h4>
-                            <h4><span>{post.content}</span><br/></h4>
+                        <h4><span className="fw-bold">Category:</span> {post.category}</h4>
+                        <h4><span>{post.content}</span><br/></h4>
                     </div>
 
                 </Col>
                 <Col md={6}>
-                    <div className="d-flex justify-content-center gap-2 mt-3">
+                <div className="d-flex justify-content-center gap-2 mt-3">
                     <Button variant="outline-info" as={Link} to={`/post/edit/${post.id}`}>Edit</Button>
                     <Button variant="outline-danger" onClick={()=> setShowModal(true)}>Delete</Button>
                     </div>
